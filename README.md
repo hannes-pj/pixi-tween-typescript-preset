@@ -37,13 +37,15 @@ This is a simple template/boilerplate for implementing a slot game using TypeScr
 # Docker as alternative
 Here are the steps to set up a docker-container.
 
-First, from the shell (bash) build the container:
+First, and needed only once, build the container in the shell (e.g. bash) - from the directory with the Dockerfile:
+
 `docker build --tag 'pixi-test' # from the directory with the Dockerfile`
-(this step is only needed once)
 
 Then run the container and map the directory with the git-repo into the docker-container under /home/development.
+
 `docker run -it -p <desired localhost-port>:8080 -v "$(pwd)":/home/developer pixi-test`
-Any changes in the files will be reflected in the computers filesystem and also in the containers filesystem:
+
+Once this is up, any changes in the files will be reflected in the computers filesystem and also in the containers filesystem:
 
 Now the user should be in a bash-shell within the container in the working-directory "/home/development".
 
