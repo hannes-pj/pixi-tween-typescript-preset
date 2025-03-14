@@ -41,13 +41,12 @@ First, and needed only once, build the container in the shell (e.g. bash) - from
 
 `docker build --tag 'pixi-test'`
 
-Then run the container and map the container-internal port 8080 to a port on your localhost/127.0.0.1, and also map the directory with the git-repo into the docker-container under /home/development:
+Then run the container and map the container-internal port 8080 to a port on your localhost/127.0.0.1, and also map the directory with the git-repo into the docker-container under /home/developer:
 
 `docker run -it -p <desired localhost-port>:8080 -v "$(pwd)":/home/developer pixi-test`
 
-Once this is up, any changes in the files will be reflected in the computers filesystem and also in the containers filesystem.
-
-Now the user should be in a bash-shell within the container in the working-directory "/home/development".
+Now the user should be in a bash-shell within the container in the working-directory "/home/developer".
+Also, with the directory-mapping, any changes in the files will be reflected in the computers filesystem and also in the containers filesystem under /home/developer.
 
 Here you can run the npm-steps to set the game up:
 * `npm run clean-setup`
