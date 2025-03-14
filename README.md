@@ -46,7 +46,7 @@ Now run the container and map the container-internal port 8080 to an unused port
 Now the user should be in a bash-shell within the container in the working-directory "/home/developer".
 Also, with the directory-mapping, any changes in the files will be reflected in the computers filesystem and also in the containers filesystem under /home/developer.
 
-Under /home/developer you can run the npm-steps to set the game up:
+Within the container and under /home/developer you can now run the npm-steps to set the game up:
 * `npm run clean-setup`
 * `npm run build`
 * `npm run start` - after that, npm monitors the files, any (external) file-changes will trigger a new build, which can be (re)loaded into the game under http://localhost:8080
