@@ -35,15 +35,14 @@ This is a simple template/boilerplate for implementing a slot game using TypeScr
 
 
 # Docker as alternative
-First, and needed only once, build the container in the shell (e.g. bash) - from the directory with the Dockerfile:
-
+Start in the root-directory of this repo ... the place with `Dockerfile` and `README.md`.\
+First, and needed only once, build the container in the shell (e.g. bash) - from the directory with the Dockerfile:\
 `docker build --tag 'pixi-test'`
 
-Now run the container and map the container-internal port 8080 to an unused port on your localhost/127.0.0.1 (e.g. 8080, 8081, ...), and also map the directory with the git-repo into the docker-container under /home/developer:
-
+Now run the container and map the container-internal port 8080 to an unused port on your localhost/127.0.0.1 (e.g. 8080, 8081, ...), and also map the directory with the git-repo into the docker-container under /home/developer:\
 `docker run -it -p <desired localhost-port>:8080 -v "$(pwd)":/home/developer pixi-test`
 
-Now the user should be in a bash-shell within the container in the working-directory "/home/developer".
+Now the user should be in a bash-shell within the container in the working-directory "/home/developer".\
 Also, with the directory-mapping, any changes in the files will be reflected in the computers filesystem and also in the containers filesystem under /home/developer.
 
 Within the container and under /home/developer you can now run the npm-steps to set the game up:
